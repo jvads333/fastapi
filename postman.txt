@@ -1,0 +1,59 @@
+# POSTMAN COMMANDS (Base URL: http://127.0.0.1:8000)
+# Remember to set Header `Content-Type: application/json` for POST requests with a body.
+
+# 1. Create User Divena (ID 1)
+Method: POST
+URL: http://127.0.0.1:8000/users
+Body:
+{
+    "id": 101,
+    "name": "Divena"
+    "balance": 0.0
+}
+
+# 2. Create User Panda (ID 2)
+Method: POST
+URL: http://127.0.0.1:8000/users
+Body:
+{
+    "id": 102,
+    "name": "Panda"
+    "balance": 0.0
+}
+
+# 3. Get Divena's Balance & Loan Info (Before Loan)
+Method: GET
+URL: http://127.0.0.1:8000/users/101/balance
+
+# 4. Divena Takes a Loan of 500
+Method: POST
+URL: http://127.0.0.1:8000/users/101/loan
+Body:
+{
+    "amount": 500
+}
+
+# 5. Get Divena's Balance & Loan Info (After Loan)
+Method: GET
+URL: http://127.0.0.1:8000/users/101/balance
+
+# 6. Perform a Debit Transaction for Divena
+Method: POST
+URL: http://127.0.0.1:8000/users/101/transaction
+Body:
+{
+    "type": "debit",
+    "amount": 100.0
+}
+
+# 7. Get Panda's Balance & Loan Info (No Loan)
+Method: GET
+URL: http://127.0.0.1:8000/users/102/balance
+
+# 8. Get All Users (Admin)
+Method: GET
+URL: http://127.0.0.1:8000/users
+
+# 9. Get All Loans (Admin)
+Method: GET
+URL: http://127.0.0.1:8000/loans

@@ -1,0 +1,2 @@
+To install the required packages :- pip install fastapi "uvicorn[standard]" pydantic httpx  
+To run the app :-  C:/Python313/python.exe -m uvicorn main:app --reload
